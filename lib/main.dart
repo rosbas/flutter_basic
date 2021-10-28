@@ -11,30 +11,84 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900],
       appBar: AppBar(
-        title: Text(
-          'Application',
-          style: TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2.0,
-            color: Colors.white,
-          ),
-        ),
+        title: Text('ID Card Application'),
         centerTitle: true,
-        backgroundColor: Colors.lightBlue[600]
-        ),
-      body: Center(
-        child: Image.asset('env1.jpg'),
+        backgroundColor: Colors.grey[850],
+        elevation: 0.0,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          print('How dare u.');
-        },
-        backgroundColor: Colors.lightBlue[600],
-        hoverColor: Colors.blue[800],
-        child: Text('clicky'),
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(30.0,40.0,30.0,0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('env1.jpg'),
+                radius: 40.0,
+              ),
+            ),
+            Divider(
+              height: 90.0,
+              color: Colors.grey[800],
+            ),
+            Text(
+              'NAME',
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 1.0,
+              ),
+            ),
+            SizedBox(height: 10.0),
+            Text(
+              'Chun-Li',
+              style: TextStyle(
+                color: Colors.amber[200],
+                letterSpacing: 1.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 30.0),
+            Text(
+              'Current Level',
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 1.0,
+              ),
+            ),
+            SizedBox(height: 10.0),
+            Text(
+              '8',
+              style: TextStyle(
+                color: Colors.amber[200],
+                letterSpacing: 1.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 30.0),
+            Row(
+              children: <Widget>[
+                Icon(
+                  Icons.email,
+                  color: Colors.grey[400],
+                ),
+                SizedBox(width: 10.0),
+                Text(
+                  'chun_li@gmail.com',
+                  style: TextStyle(
+                    color: Colors.grey[400],
+                    fontSize: 18.0,
+                    letterSpacing: 1.0,
+                  ),
+                ),
+              ],
+            )
+          ],
         ),
+      )
     );
   }
 }
